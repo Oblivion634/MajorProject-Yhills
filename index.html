@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitalCraft Studios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="./assets/css/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asar&family=Federo&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Asar&family=Federo&family=Style+Script&family=Yuji+Syuku&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Asar&family=Federo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Style+Script&family=Yuji+Syuku&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/lightbox.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="./assets/images/2.png" height="60px" width="150px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollToClass" href="#" data-target=".about">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle scrollToClass" href="#" data-target=".services" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollToClass" href="#" data-target=".testimonials">Testimonials</a>
+          </li>
+        </ul>
+        <div class="second1">
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" id="loginLink" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollToClass" href="#" data-target=".gcontainer">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollToClass" href="#" data-target=".section">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link scrollToClass" href="#" data-target=".contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="loginForm" class="form ">
+              <h2 style="color:black; text-align:center;">Login</h2>
+              <div class="user"><input type="text" placeholder="Username" required></div>
+              <div class="pwd"><input type="password" placeholder="Password" required></div>
+              <div class="remember-password">
+                <label for=""><br><input type="checkbox">Remember Me </label>
+                <a href="3" style="background-color: white; color: black; margin-top: 15px;"> Forgot Password</a>
+              </div>
+              <button class="btn" onclick="login()">Log In</button>
+              <div class="create-account">
+                <p> Create A New Account? <a href="#" id="register-link"
+                    style="background-color: white; color: black; font-weight: bolder;"> Sign Up</a></p>
+              </div>
+            </div>
+            <div id="signupForm" class="form">
+              <h2 style="color:black; text-align:center;">Sign Up</h2>
+              <div class="user"><input type="text" placeholder="Username" required></div>
+              <div class="pwd"><input type="password" placeholder="Password" required></div>
+              <button class="btn" onclick="signup()">Sign Up</button>
+              <div class="create-account">
+                <p> Already Registered? <a href="#" id="login-link"
+                    style="background-color: white; color: black; font-weight: bolder;"> Log In</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="slideshow">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/images/1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>DigitalCraft<p style="font-family: 'Times New Roman', Times, serif; font-size: 70px;">Studios</p>
+            </h1>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">Elevating Moments,
+              Capturing Stories</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>DigitalCraft<p style="font-family: 'Times New Roman', Times, serif;font-size: 70px;">Studios</p>
+            </h1>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">Elevating Moments,
+              Capturing Stories</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/6.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>DigitalCraft<p style="font-family: 'Times New Roman', Times, serif;font-size: 70px;">Studios</p>
+            </h1>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">Elevating Moments,
+              Capturing Stories</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/7.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>DigitalCraft<p style="font-family: 'Times New Roman', Times, serif;font-size: 70px;">Studios</p>
+            </h1>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">Elevating Moments,
+              Capturing Stories</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/3.avif" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>DigitalCraft<p style="font-family: 'Times New Roman', Times, serif;font-size: 70px;">Studios</p>
+            </h1>
+            <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">Elevating Moments,
+              Capturing Stories</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      setInterval(function () {
+        $('#carouselExampleCaptions').carousel('next');
+      }, 2000);
+    });
+  </script>
+
+  <div class="about">
+    <H1 style="text-align: center; font-family:Poppins, sans-serif;
+    font-weight: 800;
+    font-style: normal;">About Us</H1><br>
+    <div class="col-md-6">
+      <div
+        class=" aboutus row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+        <div class="col p-4 d-flex flex-column position-static ">
+          <p class="card-text mb-auto" style="font-size: 19px; text-align: justify; padding: 60px;">We at DigitalCraft
+            Studios specialize in photography, portfolios, and video editing, crafting captivating visuals to preserve
+            your memories and enhance your brand. With a dedicated team of professionals, we strive to exceed
+            expectations through creativity, collaboration, and attention to detail. From corporate events to personal
+            portraits, we're committed to delivering exceptional results that resonate with our clients and their
+            audiences.</p>
+        </div>
+        <img src="./assets/images/6.jpg" style="width: 310px; height:370px;  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+      </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <hr>
+  <div class="services">
+    <h1 style="text-align: center; font-family:Poppins, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  ">Our Services</h1>
+    <div class="simages">
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/images/portfolio.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Portfolio</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/images/wedding.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Wedding Photoshoot</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/images/video.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Video Making</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/images/commercial.avif" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Commercial Photoshoot</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/images/event.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Event Photography</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="./assets/images/fashion.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Fashion Photography</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <hr>
+  <div class="testimonials">
+    <h1 style="text-align: center; font-family:Poppins, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  ">Testimonials</h1>
+    <div class="t-container">
+      <img src="./assets/images/sunaina.jpg" class="i1">
+      <img src="./assets/images/hemant.avif" class="i2">
+      <img src="./assets/images/himanshu.jpg" class="i3">
+      <div class="c1">
+        <h3>Sunaina Rai</h3>
+        <img src="./assets/images/5.png" style="height: 30px;">
+        <img src="./assets/images/q.png" style="height:30px; padding-top:14px;">
+        <p style="text-align: center;">As a client of DigitalCraft Studios, I was impressed by their attention to detail
+          and commitment to excellence. Truly exceptional!</p>
+      </div>
+      <div class="c2">
+        <h3>Hemant Kumar</h3>
+        <img src="./assets/images/4.5.png" style="height: 30px;">
+        <img src="./assets/images/q.png" style="height:30px; padding-top:14px;">
+        <p style="text-align: center;">Working with DigitalCraft Studios was a gift for my business. I'm grateful for
+          their personalized approach and outstanding results.</p>
+      </div>
+      <div class="c3">
+        <h3>Himanshu Singh</h3>
+        <img src="./assets/images/5.png" style="height: 30px;">
+        <img src="./assets/images/q.png" style="height:30px; padding-top:14px;">
+        <p style="text-align: center;">DigitalCraft delivered exceptional services, exceeding our expectations. Highly
+          recommend them for anyone seeking innovative pictures.</p>
+      </div>
+      </t-container>
+    </div>
+    <hr>
+    <div class="gcontainer">
+      <h1 style="text-align: center; font-family:Poppins, sans-serif;
+      font-weight: 800;
+      font-style: normal;">Gallery</h1>
+      <div class="gallery">
+        <a href="./assets/images/i1.jpg" data-lightbox="models">
+          <img src="./assets/images/i1.jpg" alt="">
+        </a>
+        <a href="./assets/images/i2.jpg" data-lightbox="models">
+          <img src="./assets/images/i2.jpg" alt="">
+        </a>
+        <a href="./assets/images/i3.avif" data-lightbox="models">
+          <img src="./assets/images/i3.avif" alt="">
+        </a>
+        <a href="./assets/images/i4.jpg" data-lightbox="models">
+          <img src="./assets/images/i4.jpg" alt="">
+        </a>
+        <a href="./assets/images/i6.jpeg" data-lightbox="models">
+          <img src="./assets/images/i6.jpeg" alt="">
+        </a>
+        <a href="./assets/images/i7.jpg" data-lightbox="models">
+          <img src="./assets/images/i7.jpg" alt="">
+        </a>
+        <a href="./assets/images/i8.jpg" data-lightbox="models">
+          <img src="./assets/images/i8.jpg" alt="">
+        </a>
+        <a href="./assets/images/i9.jpg" data-lightbox="models">
+          <img src="./assets/images/i9.jpg" alt="">
+        </a>
+        <a href="./assets/images/i12.webp" data-lightbox="models">
+          <img src="./assets/images/i12.webp" alt="">
+        </a>
+
+      </div>
+    </div>
+    <hr>
+    <div class="section">
+      <div class="title">
+        <h1 style="text-align: center; font-family:Poppins, sans-serif;
+        font-weight: 800;
+        font-style: normal;">Awesome Team Members</h1>
+      </div>
+      <div class="arrows">
+        <button id="left-arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <button id="right-arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+      <div class="team-members">
+        <div class="member-card1">
+          <img src="./assets/images/samay.jpg" alt="">
+          <div class="icons">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+
+          </div>
+          <div class="content">
+            <h2>Samay Sinha</h2>
+            <h3>Photo
+              <br>grapher
+            </h3>
+          </div>
+        </div>
+        <div class="member-card1">
+          <img src="./assets/images/srishti.avif" alt="">
+          <div class="icons">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <h2>Srishti Singh</h2>
+            <h3>Creative Head</h3>
+          </div>
+        </div>
+        <div class="member-card1">
+          <img src="./assets/images/ajay .jpg" alt="">
+          <div class="icons">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <h2>Ajay Bhusan</h2>
+            <h3>Video Editor</h3>
+          </div>
+        </div>
+        <div class="member-card1">
+          <img src="./assets/images/mansi.avif" alt="">
+          <div class="icons">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="content">
+            <h2>Mansi Bhatia</h2>
+            <h3>Manager</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $('.team-members').slick({
+        slidesToShow: 3,
+        speed: 300,
+        prevArrow: '#left-arrow',
+        nextArrow: '#right-arrow',
+        centerPadding: '60px',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+            }
+          },
+          {
+            breakpoint: 900,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 760,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          }]
+      });
+    </script>
+
+  </div>
+
+  <hr>
+  <hr>
+  <footer class="py-5">
+    <div class="contact-us">
+      <div class="fimg"><img src="./assets/images/logo.png" style="border-radius: 20px;"></div>
+      <div class="text">
+        <h5 style="width: 300px;">Get In Touch With Us</h5>
+        <p>An all stop to all your digital vision and desires.</p>
+        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+          <label for="newsletter1" class="visually-hidden">Email address</label>
+          <input id="newsletter1" type="text" class="form-control" placeholder="Email address" style="width: auto;">
+          <button class="btn btn-primary" type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <hr>
+    <hr>
+    <div class="links">
+      <div class="ftext">
+        <p style="color: black; font-size: 20px; font-family:Poppins, sans-serif;">© DigitalCraft Studios. All rights
+          reserved.</p>
+      </div>
+      <div class="icons"> <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M15 2v3h-2c-1.103 0-2 .897-2 2v2h4v3h-4v9h-3v-9h-2v-3h2v-2c0-2.757 2.243-5 5-5h2z" />
+          </svg></a>
+        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M12 2c3.313 0 3.708.013 5 .075 1.293.064 2.354.557 3.354 1.557 1 1 1.493 2.061 1.557 3.354.062 1.291.075 1.688.075 5s-.013 3.708-.075 5c-.064 1.293-.557 2.354-1.557 3.354-1 1-2.061 1.493-3.354 1.557-1.292.062-1.688.075-5 .075s-3.708-.013-5-.075c-1.293-.064-2.354-.557-3.354-1.557-1-1-1.493-2.061-1.557-3.354-.062-1.292-.075-1.688-.075-5s.013-3.708.075-5c.064-1.293.557-2.354 1.557-3.354C6.646 2.646 7.707 2.153 9 2.089c1.292-.064 1.687-.089 3-.089zm0-2C8.829 0 8.295.042 7.795.144c-.5.102-.945.284-1.414.553s-.862.596-1.247 1.082-.717 1.063-.975 1.818C4.114 3.828 4 4.349 4 5c0 .651.114 1.172.159 1.503.258.755.596 1.384.975 1.818.38.444.822.78 1.247 1.082s.914.451 1.414.553c.5.102 1.033.144 3.205.144s2.705-.042 3.205-.144c.5-.102.945-.284 1.414-.553s.862-.596 1.247-1.082.717-1.063.975-1.818c.045-.331.159-.852.159-1.503s-.114-1.172-.159-1.503c-.258-.755-.596-1.384-.975-1.818-.38-.444-.822-.78-1.247-1.082s-.914-.451-1.414-.553C16.705.042 16.171 0 12 0z" />
+            <path
+              d="M12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 10.8a4.8 4.8 0 1 1 0-9.6 4.8 4.8 0 0 1 0 9.6zm6-10.962a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z" />
+          </svg></a>
+        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="#FF0000"
+              d="M21.375 7.219c-.234-1.672-.937-2.969-1.985-3.891C17.916 2 12 2 12 2s-5.916 0-7.39.328c-1.047.922-1.75 2.219-1.984 3.891C2 8.793 2 12 2 12s0 3.207.625 4.781c.234 1.672.937 2.969 1.985 3.891C6.084 22 12 22 12 22s5.916 0 7.39-.328c1.047-.922 1.75-2.219 1.984-3.891C22 15.207 22 12 22 12s0-3.207-.625-4.781zM10 15V9l5.25 3-5.25 3z" />
+          </svg> </a>
+        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="#000000"
+              d="M12,1.05c-6.35,0-11.49,5.14-11.49,11.49s5.14,11.49,11.49,11.49s11.49-5.14,11.49-11.49 S18.35,1.05,12,1.05 M12,22.04c-5.3,0-9.59-4.3-9.59-9.59S6.7,2.87,12,2.87s9.59,4.3,9.59,9.59S17.3,22.04,12,22.04 M12,6.56 c-1.8,0-3.25,1.46-3.25,3.25s1.46,3.25,3.25,3.25s3.25-1.46,3.25-3.25S13.8,6.56,12,6.56 M18.22,15.55c-0.19-0.16-2.59-2.17-2.78-2.32 c-0.06-0.05-0.14-0.08-0.23-0.08s-0.17,0.03-0.23,0.08c-0.19,0.15-2.59,2.16-2.78,2.32c-0.11,0.09-0.18,0.22-0.18,0.36v0.62 c0,0.22,0.18,0.4,0.4,0.4h4.72c0.22,0,0.4-0.18,0.4-0.4v-0.62C18.4,15.77,18.33,15.64,18.22,15.55 M7.78,15.55 c-0.19-0.16-2.59-2.17-2.78-2.32c-0.06-0.05-0.14-0.08-0.23-0.08s-0.17,0.03-0.23,0.08c-0.19,0.15-2.59,2.16-2.78,2.32 c-0.11,0.09-0.18,0.22-0.18,0.36v0.62c0,0.22,0.18,0.4,0.4,0.4h4.72c0.22,0,0.4-0.18,0.4-0.4v-0.62 C7.95,15.77,7.89,15.64,7.78,15.55 M18.35,7.84c0-0.21-0.17-0.38-0.38-0.38h-3.21v2.19c0,0.17-0.14,0.31-0.31,0.31h-1.03 c-0.17,0-0.31-0.14-0.31-0.31V7.46H6.03c-0.21,0-0.38,0.17-0.38,0.38v8.71c0,0.21,0.17,0.38,0.38,0.38h0.96v-4.45 c0-0.26,0.21-0.47,0.47-0.47h4.39c0.26,0,0.47,0.21,0.47,0.47v4.45h1.96c0.21,0,0.38-0.17,0.38-0.38V7.84L18.35,7.84z">
+            </path>
+          </svg></a>
+      </div>
+    </div>
+    <script src="./assets/js/lightbox-plus-jquery.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+
+  </footer>
+</body>
+
+</html>
